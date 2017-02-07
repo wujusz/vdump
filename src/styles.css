@@ -1,0 +1,52 @@
+label {
+    position: absolute;
+    top: 66px;
+    left: 19px;
+}
+input#show, input#hide {
+    display:none;
+}
+span#content {
+    display: block;
+    -webkit-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    margin-top: -43px;
+}
+input#show:checked ~ .show:before {
+    content: ""
+}
+input#show:checked ~ .hide:before {
+    content: "Hide backtrace"
+}
+input#hide:checked ~ .hide:before {
+    content: ""
+}
+input#hide:checked ~ .show:before {
+    content: "Show backtrace"
+}
+input#show:checked ~ span#content {
+    opacity: 1;
+    font-size: 100%;
+    height: auto;
+}
+input#hide:checked ~ span#content {
+    display: block;
+    -webkit-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+#content {
+//                      float: left;
+//                      margin: 100px auto;
+}
+
+pre.pre {
+    background: #eee; border: 1px solid #aaa; clear: both; overflow: auto; padding: 10px; text-align: left; margin-bottom: 5px
+}
