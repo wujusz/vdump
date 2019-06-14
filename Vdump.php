@@ -68,7 +68,9 @@ if (!function_exists('vdump')) {
             }
 
             pre.pre {
-                background: #eee; border: 1px solid #aaa; clear: both; overflow: auto; padding: 10px; text-align: left; margin-bottom: 5px
+                background: #eee; border: 1px solid #aaa; clear: both; overflow: auto; padding: 10px; text-align: left; margin-bottom: 5px;
+                position: relative;
+                z-index: 99999999999999999;
             }
 
         </style>';
