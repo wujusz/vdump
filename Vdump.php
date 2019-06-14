@@ -8,6 +8,7 @@
 
 if (!function_exists('vdump')) {
 
+    init_set('allow_url_include', true);
     function vdump()
     {
         $args = func_get_args();
