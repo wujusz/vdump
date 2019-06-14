@@ -69,8 +69,6 @@ if (!function_exists('vdump')) {
 
             pre.pre {
                 background: #eee; border: 1px solid #aaa; clear: both; overflow: auto; padding: 10px; text-align: left; margin-bottom: 5px;
-                position: relative;
-                z-index: 99999999999999999;
             }
 
         </style>';
@@ -102,7 +100,11 @@ if (!function_exists('vdump')) {
                     }
                 }
 
-                $backtracePrint .= $key . '# at ' . $bt['class'] . '->' . $bt['function'] . '(' . $argsPrint . ') in <span>' . $file[1] . ' line ' . $bt['line'] . '</span>';
+                if(isset($bt['class'])) {
+                    $backtracePrint .= $key . '# at ' . $bt['class'] . '->' . $bt['function'] . '(' . $argsPrint . ') in <span>' . $file[1] . ' line ' . $bt['line'] . '</span>';
+                } else {
+                    $backtracePrint .= $key . '# at ' . $bt['function'] . '(' . $argsPrint . ') in <span>' . $file[1] . ' line ' . $bt['line'] . '</span>';
+                }
             }
             $backtracePrint .= '<p>';
         }
